@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\casco.jpg" />
+	  <None Remove="Resources\Images\Logo.jpg" />
 	  <None Remove="Resources\Images\rifle.jpg" />
 	</ItemGroup>
 
@@ -59,6 +60,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\DetallesProductoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PerfilPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ProductosPage.xaml">

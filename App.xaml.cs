@@ -1,11 +1,13 @@
-﻿namespace AirsoftCore_App;
+﻿using Microsoft.Maui.Controls;
 
-public partial class App : Application
+namespace AirsoftCore_App
 {
-	public App()
-	{
-		InitializeComponent();
-
-		MainPage = new AppShell();
-	}
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
+            MainPage = new AppShell();
+        }
+    }
 }

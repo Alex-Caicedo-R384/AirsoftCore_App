@@ -22,6 +22,9 @@ namespace AirsoftCore_App.Views
             if (await authService.IniciarSesionAsync(usuario, contraseña))
             {
                 await DisplayAlert("Inicio de Sesión", "Inicio de sesión exitoso", "OK");
+
+                MessagingCenter.Send<LoginPage>(this, "UserLoggedIn");
+
                 await Navigation.PushAsync(new ProductosPage());
             }
             else

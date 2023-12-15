@@ -34,5 +34,38 @@ namespace AirsoftCore_App.Services
 
             return usuario != null;
         }
+
+        public async Task<bool> ActualizarDatosPerfilAsync(string nombreUsuario, string nuevaContraseña)
+        {
+            var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
+
+            if (usuario != null)
+            {
+                usuario.Contraseña = nuevaContraseña;
+                await Task.Delay(100);
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> SubirFotoAsync(string nombreUsuario, byte[] fotoBytes)
+        {
+            var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
+
+            if (usuario != null)
+            {
+                usuario.FotoPerfil = fotoBytes;
+                await Task.Delay(100);
+                return true;
+            }
+
+            return false;
+        }
+
+        public void CerrarSesion()
+        {
+            
+        }
     }
 }
