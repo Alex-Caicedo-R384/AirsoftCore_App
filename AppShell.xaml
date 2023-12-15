@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="AirsoftCore_App.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:AirsoftCore_App.Views"
-    Shell.FlyoutBehavior="Disabled">
+<Shell x:Class="AirsoftCore_App.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:AirsoftCore_App.Views"
+       Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
 
     <ShellContent
         Title="Productos"
@@ -15,4 +19,9 @@
         Title="Detalles del Producto"
         ContentTemplate="{DataTemplate views:DetallesProductoPage}"
         Route="DetallesProductoPage" />
+
+    <ShellContent
+        Title="Registro"
+        ContentTemplate="{DataTemplate views:RegistroPage}"
+        Route="RegistroPage" />
 </Shell>
