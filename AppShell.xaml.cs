@@ -49,7 +49,9 @@ namespace AirsoftCore_App
 
         protected override async void OnNavigating(ShellNavigatingEventArgs args)
         {
-            if (args.Target.Location.OriginalString.Contains(nameof(PerfilPage)) && !IsUserLoggedIn)
+            var targetPage = args.Target.Location.OriginalString;
+
+            if ((targetPage.Contains(nameof(PerfilPage)) || targetPage.Contains(nameof(ProductosPage))) && !IsUserLoggedIn)
             {
                 args.Cancel();
                 await MostrarMensajeIniciarSesion();
