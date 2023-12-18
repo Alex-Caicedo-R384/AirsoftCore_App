@@ -49,9 +49,35 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\bateria.jpg" />
+	  <None Remove="Resources\Images\bolas.jpg" />
+	  <None Remove="Resources\Images\cargador.jpg" />
+	  <None Remove="Resources\Images\cargador_bateria.jpg" />
+	  <None Remove="Resources\Images\carrito.jpg" />
 	  <None Remove="Resources\Images\casco.jpg" />
+	  <None Remove="Resources\Images\chaleco.jpg" />
+	  <None Remove="Resources\Images\correa.jpg" />
+	  <None Remove="Resources\Images\escopeta.jpg" />
+	  <None Remove="Resources\Images\francotirador.jpg" />
+	  <None Remove="Resources\Images\funda.jpg" />
+	  <None Remove="Resources\Images\gafas.jpg" />
+	  <None Remove="Resources\Images\guantes.jpg" />
+	  <None Remove="Resources\Images\inicio.jpg" />
+	  <None Remove="Resources\Images\laser.jpg" />
+	  <None Remove="Resources\Images\linterna.jpg" />
+	  <None Remove="Resources\Images\login.jpg" />
 	  <None Remove="Resources\Images\Logo.jpg" />
+	  <None Remove="Resources\Images\mascara.jpg" />
+	  <None Remove="Resources\Images\parches.jpg" />
+	  <None Remove="Resources\Images\perfil.jpg" />
+	  <None Remove="Resources\Images\pistola.jpg" />
+	  <None Remove="Resources\Images\pistola2.jpg" />
+	  <None Remove="Resources\Images\productos.jpg" />
+	  <None Remove="Resources\Images\registro.jpg" />
 	  <None Remove="Resources\Images\rifle.jpg" />
+	  <None Remove="Resources\Images\rodilleras.jpg" />
+	  <None Remove="Resources\Images\silenciador.jpg" />
+	  <None Remove="Resources\Images\subfusil.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -59,6 +85,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\CarritoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\DetallesProductoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

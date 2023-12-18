@@ -1,13 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:AirsoftCore_App.Models"
-             x:Class="AirsoftCore_App.Views.ProductosPage"
-             Title="Catálogo de Airsoft"
+             x:Class="AirsoftCore_App.Views.CarritoPage"
+             Title="Carrito de Compras"
              BackgroundColor="#5e5e5e">
 
     <StackLayout>
-        <CollectionView x:Name="productosCollectionView" SelectionChanged="OnProductoSeleccionado"
-                        VerticalScrollBarVisibility="Default">
+        <CollectionView x:Name="CarritoCollectionView">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" />
             </CollectionView.ItemsLayout>
@@ -16,15 +15,14 @@
                     <StackLayout Padding="10" BackgroundColor="#5e5e5e">
                         <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" TextColor="White" />
                         <Image Source="{Binding UrlImagen}" HeightRequest="100" Aspect="AspectFit" />
-                        <Button Text="Detalles" Clicked="OnDetallesButtonClick"
-                                CommandParameter="{Binding Nombre}"
-                                BackgroundColor="#800020" TextColor="White" />
-                        <Button Text="Agregar al Carrito" Clicked="OnAgregarAlCarritoClick"
+                        <Button Text="Eliminar del Carrito" Clicked="OnEliminarDelCarritoClick"
                                 CommandParameter="{Binding Id}"
                                 BackgroundColor="#800020" TextColor="White" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Text="Realizar Compra" Clicked="OnRealizarCompraClick"
+                BackgroundColor="#800020" TextColor="White" />
     </StackLayout>
 </ContentPage>
