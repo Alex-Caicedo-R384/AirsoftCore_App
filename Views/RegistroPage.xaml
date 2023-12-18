@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AirsoftCore_App.Models"
              x:Class="AirsoftCore_App.Views.RegistroPage"
-             Title="Registro">
+             Title="Registro"
+             BackgroundColor="#5e5e5e">
     <StackLayout>
         <Entry x:Name="entryNuevoUsuario" Placeholder="Nuevo Nombre de Usuario" />
         <Entry x:Name="entryNuevaContraseña" Placeholder="Nueva Contraseña" IsPassword="True" TextChanged="OnEntryNuevaContraseñaTextChanged" />

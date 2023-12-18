@@ -6,7 +6,8 @@ namespace AirsoftCore_App.Models
     {
         public string NombreUsuario { get; set; }
         public string Contraseña { get; set; }
-        public byte[] FotoPerfil { get; set; }
+        public decimal Dinero { get; set; }
+        public int Creditos { get; set; }
 
     }
 }

@@ -7,22 +7,26 @@
     <ShellContent
         Title="Página de Inicio"
         ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"
+        Icon="inicio.jpg" />
 
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage"
+        Icon="login.jpg" />
 
     <ShellContent
         Title="Registro"
         ContentTemplate="{DataTemplate views:RegistroPage}"
-        Route="RegistroPage" />
+        Route="RegistroPage"
+        Icon="registro.jpg" />
 
     <ShellContent
         Title="Productos"
         ContentTemplate="{DataTemplate views:ProductosPage}"
-        Route="ProductosPage">
+        Route="ProductosPage"
+        Icon="productos.jpg">
         <ShellContent.IsVisible>
             <OnIdiom x:TypeArguments="x:Boolean">
                 <OnIdiom.Phone>true</OnIdiom.Phone>
@@ -35,7 +39,22 @@
     <ShellContent
         Title="Perfil"
         ContentTemplate="{DataTemplate views:PerfilPage}"
-        Route="PerfilPage">
+        Route="PerfilPage"
+        Icon="perfil.jpg">
+        <ShellContent.IsVisible>
+            <OnIdiom x:TypeArguments="x:Boolean">
+                <OnIdiom.Phone>true</OnIdiom.Phone>
+                <OnIdiom.Tablet>true</OnIdiom.Tablet>
+                <OnIdiom.Desktop>true</OnIdiom.Desktop>
+            </OnIdiom>
+        </ShellContent.IsVisible>
+    </ShellContent>
+
+    <ShellContent
+        Title="Carrito"
+        ContentTemplate="{DataTemplate views:CarritoPage}"
+        Route="CarritoPage"
+        Icon="carrito.jpg">
         <ShellContent.IsVisible>
             <OnIdiom x:TypeArguments="x:Boolean">
                 <OnIdiom.Phone>true</OnIdiom.Phone>

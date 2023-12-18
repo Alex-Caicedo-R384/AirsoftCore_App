@@ -35,6 +35,24 @@ namespace AirsoftCore_App.Services
             return usuario != null;
         }
 
+        public async Task<decimal> ObtenerDineroDelUsuarioAsync(string nombreUsuario)
+        {
+            var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
+
+            await Task.Delay(100);
+
+            return usuario?.Dinero ?? 0;
+        }
+
+        public async Task<int> ObtenerCreditosDelUsuarioAsync(string nombreUsuario)
+        {
+            var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
+
+            await Task.Delay(100);
+
+            return usuario?.Creditos ?? 0;
+        }
+
         public async Task<bool> ActualizarDatosPerfilAsync(string nombreUsuario, string nuevaContraseña)
         {
             var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
@@ -48,6 +66,5 @@ namespace AirsoftCore_App.Services
 
             return false;
         }
-
     }
 }

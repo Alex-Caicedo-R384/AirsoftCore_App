@@ -14,3 +14,4 @@
         <Image Source="{Binding UrlImagen}" HeightRequest="200" Aspect="AspectFit" />
     </StackLayout>
 </ContentPage>
+

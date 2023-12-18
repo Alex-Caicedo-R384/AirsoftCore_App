@@ -2,11 +2,13 @@
 using AirsoftCore_App.Views;
 using System.Linq;
 using System.Threading.Tasks;
+using AirsoftCore_App.Models;
 
 namespace AirsoftCore_App
 {
     public partial class AppShell : Shell
     {
+        public static Carrito Carrito { get; } = new Carrito();
         public static bool IsUserLoggedIn { get; set; }
 
         public AppShell()
@@ -17,6 +19,7 @@ namespace AirsoftCore_App
             Routing.RegisterRoute(nameof(RegistroPage), typeof(Views.RegistroPage));
             Routing.RegisterRoute(nameof(ProductosPage), typeof(Views.ProductosPage));
             Routing.RegisterRoute(nameof(PerfilPage), typeof(Views.PerfilPage));
+            Routing.RegisterRoute(nameof(CarritoPage), typeof(Views.CarritoPage));
 
             IsUserLoggedIn = false;
             MessagingCenter.Subscribe<Views.LoginPage>(this, "UserLoggedIn", (sender) =>
@@ -45,13 +48,22 @@ namespace AirsoftCore_App
                     tab.FlyoutItemIsVisible = IsUserLoggedIn;
                 }
             }
+
+            var carritoTab = Shell.Current?.Items.FirstOrDefault(item => item.Route == nameof(CarritoPage));
+            if (carritoTab is ShellItem shellItemCarrito)
+            {
+                foreach (var tab in shellItemCarrito.Items)
+                {
+                    tab.FlyoutItemIsVisible = IsUserLoggedIn;
+                }
+            }
         }
 
         protected override async void OnNavigating(ShellNavigatingEventArgs args)
         {
             var targetPage = args.Target.Location.OriginalString;
 
-            if ((targetPage.Contains(nameof(PerfilPage)) || targetPage.Contains(nameof(ProductosPage))) && !IsUserLoggedIn)
+            if ((targetPage.Contains(nameof(PerfilPage)) || targetPage.Contains(nameof(ProductosPage)) || targetPage.Contains(nameof(CarritoPage))) && !IsUserLoggedIn)
             {
                 args.Cancel();
                 await MostrarMensajeIniciarSesion();

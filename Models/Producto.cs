@@ -9,5 +9,6 @@
         public string Descripcion { get; set; }
         public string UrlImagen { get; set; }
         public bool IsSelected { get; set; }
+        public string Id { get; } = Guid.NewGuid().ToString();
     }
 }
