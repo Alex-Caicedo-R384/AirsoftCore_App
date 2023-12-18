@@ -49,23 +49,5 @@ namespace AirsoftCore_App.Services
             return false;
         }
 
-        public async Task<bool> SubirFotoAsync(string nombreUsuario, byte[] fotoBytes)
-        {
-            var usuario = UsuariosRegistrados.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
-
-            if (usuario != null)
-            {
-                usuario.FotoPerfil = fotoBytes;
-                await Task.Delay(100);
-                return true;
-            }
-
-            return false;
-        }
-
-        public void CerrarSesion()
-        {
-            
-        }
     }
 }

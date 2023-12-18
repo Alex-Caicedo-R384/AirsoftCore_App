@@ -31,41 +31,5 @@ namespace AirsoftCore_App.Views
 
             await authService.ActualizarDatosPerfilAsync(nuevoUsuario, nuevaContraseña);
         }
-
-        private async void OnSubirFotoClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                var photo = await MediaPicker.CapturePhotoAsync();
-                if (photo != null)
-                {
-                    var photoStream = await photo.OpenReadAsync();
-                    var photoBytes = new byte[photoStream.Length];
-                    await photoStream.ReadAsync(photoBytes, 0, photoBytes.Length);
-
-                    await authService.SubirFotoAsync(entryNuevoUsuario.Text, photoBytes);
-
-                    await DisplayAlert("Perfil", "Foto subida correctamente", "OK");
-                }
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", $"Error al subir la foto: {ex.Message}", "OK");
-            }
-        }
-
-        private async void OnCerrarSesionClicked(object sender, EventArgs e)
-        {
-            bool confirmacion = await DisplayAlert("Cerrar Sesión", "¿Estás seguro de cerrar sesión?", "Sí", "No");
-
-            if (confirmacion)
-            {
-                authService.CerrarSesion();
-
-                MessagingCenter.Send<PerfilPage>(this, "UserLoggedOut");
-
-                await Navigation.PopToRootAsync();
-            }
-        }
     }
 }
