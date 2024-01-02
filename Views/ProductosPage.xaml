@@ -4,27 +4,28 @@
              x:Class="AirsoftCore_App.Views.ProductosPage"
              Title="Catálogo de Airsoft"
              BackgroundColor="#5e5e5e">
-
-    <StackLayout>
-        <CollectionView x:Name="productosCollectionView" SelectionChanged="OnProductoSeleccionado"
-                        VerticalScrollBarVisibility="Default">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" BackgroundColor="#5e5e5e">
-                        <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" TextColor="White" />
-                        <Image Source="{Binding UrlImagen}" HeightRequest="100" Aspect="AspectFit" />
-                        <Button Text="Detalles" Clicked="OnDetallesButtonClick"
-                                CommandParameter="{Binding Nombre}"
-                                BackgroundColor="#800020" TextColor="White" />
-                        <Button Text="Agregar al Carrito" Clicked="OnAgregarAlCarritoClick"
-                                CommandParameter="{Binding Id}"
-                                BackgroundColor="#800020" TextColor="White" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <CollectionView x:Name="productosCollectionView" SelectionChanged="OnProductoSeleccionado"
+                            VerticalScrollBarVisibility="Default">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" BackgroundColor="#5e5e5e">
+                            <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                            <Image Source="{Binding UrlImagen}" HeightRequest="100" Aspect="AspectFit" />
+                            <Button Text="Detalles" Clicked="OnDetallesButtonClick"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#800020" TextColor="White" />
+                            <Button Text="Agregar al Carrito" Clicked="OnAgregarAlCarritoClick"
+                                    CommandParameter="{Binding Id}"
+                                    BackgroundColor="#800020" TextColor="White" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

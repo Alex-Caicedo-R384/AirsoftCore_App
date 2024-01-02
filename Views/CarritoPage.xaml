@@ -5,24 +5,26 @@
              Title="Carrito de Compras"
              BackgroundColor="#5e5e5e">
 
-    <StackLayout>
-        <CollectionView x:Name="CarritoCollectionView">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10" BackgroundColor="#5e5e5e">
-                        <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" TextColor="White" />
-                        <Image Source="{Binding UrlImagen}" HeightRequest="100" Aspect="AspectFit" />
-                        <Button Text="Eliminar del Carrito" Clicked="OnEliminarDelCarritoClick"
-                                CommandParameter="{Binding Id}"
-                                BackgroundColor="#800020" TextColor="White" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Button Text="Realizar Compra" Clicked="OnRealizarCompraClick"
-                BackgroundColor="#800020" TextColor="White" />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <CollectionView x:Name="CarritoCollectionView">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10" BackgroundColor="#5e5e5e">
+                            <Label Text="{Binding Nombre}" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                            <Image Source="{Binding UrlImagen}" HeightRequest="100" Aspect="AspectFit" />
+                            <Button Text="Eliminar del Carrito" Clicked="OnEliminarDelCarritoClick"
+                                    CommandParameter="{Binding Id}"
+                                    BackgroundColor="#800020" TextColor="White" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Realizar Compra" Clicked="OnRealizarCompraClick"
+                    BackgroundColor="#800020" TextColor="White" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
