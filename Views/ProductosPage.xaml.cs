@@ -78,19 +78,21 @@ namespace AirsoftCore_App.Views
 
         private void OnDetallesButtonClick(object sender, EventArgs e)
         {
-            if (sender is Button button && button.CommandParameter is string nombreProducto)
+            if (sender is Button button && button.CommandParameter is Producto producto)
             {
-                Navigation.PushAsync(new DetallesProductoPage { Producto = Productos.FirstOrDefault(p => p.Nombre == nombreProducto) });
+                Navigation.PushAsync(new DetallesProductoPage(producto));
             }
         }
+
 
         private void OnProductoSeleccionado(object sender, SelectionChangedEventArgs e)
         {
             if (e.CurrentSelection.FirstOrDefault() is Producto selectedProducto)
             {
                 ((CollectionView)sender).SelectedItem = null;
-                Navigation.PushAsync(new DetallesProductoPage { Producto = selectedProducto });
+                Navigation.PushAsync(new DetallesProductoPage(selectedProducto));
             }
         }
+
     }
 }
